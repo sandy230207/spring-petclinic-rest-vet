@@ -1,30 +1,19 @@
-DB_NAME = "mysql-petclinic-vet"
-VET_SERVER_NAME = "spring-petclinic-rest-vet"
-
-db-build:
-	docker build \
-		-f docker/db.Dockerfile \
-		-t $(DB_NAME) .
-
-db-run:
-	docker run -d--rm \
-		--name=mysql-petclinic-vet \
-		-h localhost \
-		-p 3307:3306 \
-		-e MYSQL_ROOT_PASSWORD=petclinic \
-		-e MYSQL_DATABASE=petclinic \
-		$(DB_NAME)
+VET_SERVER_NAME = "sandy230207/spring-petclinic-rest-vet:v1"
 
 app-build:
 	docker build \
-		-f docker/app.Dockerfile \
+		-f Dockerfile \
 		-t $(VET_SERVER_NAME) .
+
+app-push:
+	docker push $(VET_SERVER_NAME)
 
 app-run:
 	docker run -d --rm \
 		--name=spring-petclinic-vet \
 		-h localhost \
 		--link=mysql-petclinic-owner \
+		-e MYSQL_HOST="chart-example.local" \
 		-p 9967:9967 \
 		$(VET_SERVER_NAME)
 		

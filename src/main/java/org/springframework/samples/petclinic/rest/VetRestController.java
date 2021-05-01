@@ -123,7 +123,4 @@ public class VetRestController {
 		this.clinicService.deleteVet(vet);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-
-
-
 }

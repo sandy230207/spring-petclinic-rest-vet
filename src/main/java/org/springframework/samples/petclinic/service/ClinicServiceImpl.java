@@ -41,15 +41,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class ClinicServiceImpl implements ClinicService {
 
     private VetRepository vetRepository;
-    private SpecialtyRepository specialtyRepository;
+	private SpecialtyRepository specialtyRepository;
+
 
     @Autowired
      public ClinicServiceImpl(
     		 VetRepository vetRepository,
-    		 SpecialtyRepository specialtyRepository){
+			 SpecialtyRepository specialtyRepository){
         this.vetRepository = vetRepository;
-        this.specialtyRepository = specialtyRepository; 
-    }
+		this.specialtyRepository = specialtyRepository; 
+	   }
 
 	@Override
 	@Transactional(readOnly = true)
@@ -81,7 +82,6 @@ public class ClinicServiceImpl implements ClinicService {
 	public void deleteVet(Vet vet) throws DataAccessException {
 		vetRepository.delete(vet);
 	}
-
 
 
 	@Override
@@ -122,6 +122,5 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Vet> findVets() throws DataAccessException {
 		return vetRepository.findAll();
 	}
-	
 
 }

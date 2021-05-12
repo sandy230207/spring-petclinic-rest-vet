@@ -1,4 +1,5 @@
-VET_SERVER_NAME = "sandy230207/spring-petclinic-rest-vet:v1"
+OWNER_SERVER_NAME = "sandy230207/spring-petclinic-rest-vet:v1"
+# OWNER_SERVER_NAME = "a123453906/spring-petclinic-rest-vet:latest"
 
 app-build:
 	docker build \
@@ -16,7 +17,7 @@ app-run:
 		-e MYSQL_HOST="chart-example.local" \
 		-p 9967:9967 \
 		$(VET_SERVER_NAME)
-		
+
 run:
 	./mvnw spring-boot:run
 

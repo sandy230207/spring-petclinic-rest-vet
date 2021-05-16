@@ -27,7 +27,8 @@ public abstract class AbstractUserServiceTests {
         user.setUsername("username");
         user.setPassword("password");
         user.setEnabled(true);
-        user.addRole("OWNER_ADMIN");
+        user.setUid(2);
+        user.addRole("VET_ADMIN");
 
         userService.saveUser(user);
         assertThat(user.getRoles().parallelStream().allMatch(role -> role.getName().startsWith("ROLE_")), is(true));

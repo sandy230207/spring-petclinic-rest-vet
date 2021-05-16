@@ -69,6 +69,7 @@ CREATE  TABLE users (
   username    VARCHAR(20) NOT NULL ,
   password    VARCHAR(20) NOT NULL ,
   enabled     BOOLEAN DEFAULT TRUE NOT NULL ,
+  uid INTEGER NOT NULL ,
   PRIMARY KEY (username)
 );
 

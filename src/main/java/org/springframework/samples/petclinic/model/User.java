@@ -27,6 +27,9 @@ public class User {
     @Column(name = "enabled")
     private Boolean enabled;
 
+    @Column(name = "uid")
+    private Integer uid;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private Set<Role> roles;
 
@@ -52,6 +55,14 @@ public class User {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public Set<Role> getRoles() {

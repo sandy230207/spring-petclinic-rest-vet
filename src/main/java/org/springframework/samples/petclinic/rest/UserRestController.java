@@ -46,7 +46,7 @@ public class UserRestController {
     private UserService userService;
 
     @PreAuthorize( "hasRole(@roles.ADMIN)" )
-    @RequestMapping(value = "/signUp", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/signup", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<User> signUp(@RequestBody @Valid User user,  BindingResult bindingResult) throws Exception {
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();
@@ -61,7 +61,7 @@ public class UserRestController {
     }
 
     @PreAuthorize( "hasRole(@roles.ADMIN)" )
-    @RequestMapping(value = "/signIn", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/signin", method = RequestMethod.POST, produces = "application/json")
 	public ResponseEntity<User> signIn(@RequestBody @Valid User user,  BindingResult bindingResult) throws Exception {
         BindingErrorsResponse errors = new BindingErrorsResponse();
         HttpHeaders headers = new HttpHeaders();

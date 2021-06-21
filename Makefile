@@ -13,8 +13,9 @@ app-run:
 	docker run -d --rm \
 		--name=spring-petclinic-vet \
 		-h localhost \
-		--link=mysql-petclinic-owner \
-		-e MYSQL_HOST="chart-example.local" \
+		--link=mysql-petclinic \
+		-e MYSQL_HOST=localhost \
+		-e MYSQL_PASSWORD=petclinic \
 		-p 9967:9967 \
 		$(VET_SERVER_NAME)
 

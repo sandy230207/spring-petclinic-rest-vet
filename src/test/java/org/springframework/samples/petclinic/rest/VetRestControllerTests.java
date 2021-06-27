@@ -80,18 +80,21 @@ public class VetRestControllerTests {
     	vet.setId(1);
     	vet.setFirstName("James");
     	vet.setLastName("Carter");
+		vet.setTelephone("0935712045");
     	vets.add(vet);
 
     	vet = new Vet();
     	vet.setId(2);
     	vet.setFirstName("Helen");
     	vet.setLastName("Leary");
+		vet.setTelephone("0935729645");
     	vets.add(vet);
 
     	vet = new Vet();
     	vet.setId(3);
     	vet.setFirstName("Linda");
     	vet.setLastName("Douglas");
+		vet.setTelephone("0936937856");
     	vets.add(vet);
     }
 

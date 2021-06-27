@@ -61,6 +61,7 @@ public abstract class AbstractClinicServiceTests {
 
         Vet vet = EntityUtils.getById(vets, Vet.class, 3);
         assertThat(vet.getLastName()).isEqualTo("Douglas");
+        assertThat(vet.getTelephone()).isEqualTo("0923456789");
         assertThat(vet.getNrOfSpecialties()).isEqualTo(2);
         assertThat(vet.getSpecialties().get(0).getName()).isEqualTo("dentistry");
         assertThat(vet.getSpecialties().get(1).getName()).isEqualTo("surgery");
@@ -72,6 +73,7 @@ public abstract class AbstractClinicServiceTests {
     	Vet vet = this.clinicService.findVetById(1);
     	assertThat(vet.getFirstName()).isEqualTo("James");
     	assertThat(vet.getLastName()).isEqualTo("Carter");
+        assertThat(vet.getTelephone()).isEqualTo("0912345678");
     }
 
     @Test
@@ -83,6 +85,7 @@ public abstract class AbstractClinicServiceTests {
         Vet vet = new Vet();
         vet.setFirstName("John");
         vet.setLastName("Dow");
+        vet.setTelephone("0934567890");
 
         this.clinicService.saveVet(vet);
         assertThat(vet.getId().longValue()).isNotEqualTo(0);
@@ -97,6 +100,7 @@ public abstract class AbstractClinicServiceTests {
     	Vet vet = this.clinicService.findVetById(1);
     	String oldLastName = vet.getLastName();
         String newLastName = oldLastName + "X";
+        String oldTelephone = vet.getTelephone();
         vet.setLastName(newLastName);
         this.clinicService.saveVet(vet);
         vet = this.clinicService.findVetById(1);

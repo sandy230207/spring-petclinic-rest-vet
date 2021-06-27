@@ -76,7 +76,7 @@ public class JdbcVetRepositoryImpl implements VetRepository {
         List<Vet> vets = new ArrayList<>();
         // Retrieve the list of all vets.
         vets.addAll(this.jdbcTemplate.query(
-            "SELECT id, first_name, last_name FROM vets ORDER BY last_name,first_name",
+            "SELECT id, first_name, last_name, telephone FROM vets ORDER BY last_name,first_name",
             BeanPropertyRowMapper.newInstance(Vet.class)));
 
         // Retrieve the list of all possible specialties.
@@ -110,7 +110,7 @@ public class JdbcVetRepositoryImpl implements VetRepository {
 			Map<String, Object> vet_params = new HashMap<>();
 			vet_params.put("id", id);
 			vet = this.namedParameterJdbcTemplate.queryForObject(
-					"SELECT id, first_name, last_name FROM vets WHERE id= :id",
+					"SELECT id, first_name, last_name, telephone FROM vets WHERE id= :id",
 					vet_params,
 					BeanPropertyRowMapper.newInstance(Vet.class));
 
@@ -146,7 +146,7 @@ public class JdbcVetRepositoryImpl implements VetRepository {
 			updateVetSpecialties(vet);
 		} else {
 			this.namedParameterJdbcTemplate
-					.update("UPDATE vets SET first_name=:firstName, last_name=:lastName WHERE id=:id", parameterSource);
+					.update("UPDATE vets SET first_name=:firstName, last_name=:lastName, telephone=:telephone WHERE id=:id", parameterSource);
 			updateVetSpecialties(vet);
 		}
 	}

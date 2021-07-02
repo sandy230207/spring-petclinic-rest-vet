@@ -174,6 +174,7 @@ public class VetRestControllerTests {
     	given(this.clinicService.findVetById(1)).willReturn(vets.get(0));
     	Vet newVet = vets.get(0);
     	newVet.setFirstName("James");
+		newVet.setTelephone("0935712050");
     	ObjectMapper mapper = new ObjectMapper();
     	String newVetAsJSON = mapper.writeValueAsString(newVet);
     	this.mockMvc.perform(put("/api/vets/1")
@@ -186,7 +187,8 @@ public class VetRestControllerTests {
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/json"))
             .andExpect(jsonPath("$.id").value(1))
-            .andExpect(jsonPath("$.firstName").value("James"));
+            .andExpect(jsonPath("$.firstName").value("James"))
+			.andExpect(jsonPath("$.telephone").value("0935712050"));
 
     }
 

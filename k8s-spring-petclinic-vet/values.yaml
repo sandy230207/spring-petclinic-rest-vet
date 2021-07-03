@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 5
 
 image:
   repository: sandy230207/spring-petclinic-rest-vet
@@ -83,6 +83,7 @@ affinity: {}
 
 env:
   - name: MYSQL_HOST
-    value: mysql-petclinic-k8s-mysql-petclinic
+    # value: mysql-petclinic-k8s-mysql-petclinic
+    value: 10.107.77.78
   - name: MYSQL_PASSWORD
     value: petclinic

@@ -1,9 +1,9 @@
-INSERT INTO vets VALUES (1, 'James', 'Carter');
-INSERT INTO vets VALUES (2, 'Helen', 'Leary');
-INSERT INTO vets VALUES (3, 'Linda', 'Douglas');
-INSERT INTO vets VALUES (4, 'Rafael', 'Ortega');
-INSERT INTO vets VALUES (5, 'Henry', 'Stevens');
-INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins');
+INSERT INTO vets VALUES (1, 'James', 'Carter', '0912345678');
+INSERT INTO vets VALUES (2, 'Helen', 'Leary', '0987654321');
+INSERT INTO vets VALUES (3, 'Linda', 'Douglas', '0923456789');
+INSERT INTO vets VALUES (4, 'Rafael', 'Ortega', '0998765432');
+INSERT INTO vets VALUES (5, 'Henry', 'Stevens', '0901234567');
+INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins', '0976543210');
 
 INSERT INTO specialties VALUES (1, 'radiology');
 INSERT INTO specialties VALUES (2, 'surgery');

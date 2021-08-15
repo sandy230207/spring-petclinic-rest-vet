@@ -104,6 +104,7 @@ public class VetRestController {
 		}
 		currentVet.setFirstName(vet.getFirstName());
 		currentVet.setLastName(vet.getLastName());
+		currentVet.setTelephone(vet.getTelephone());
 		currentVet.clearSpecialties();
 		for(Specialty spec : vet.getSpecialties()) {
 			currentVet.addSpecialty(spec);

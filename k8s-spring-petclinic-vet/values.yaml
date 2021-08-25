@@ -5,12 +5,12 @@
 replicaCount: 5
 
 image:
-  repository: sandy230207/spring-petclinic-rest-vet
-  # repository: a123453906/spring-petclinic-rest-vet
+  #repository: sandy230207/spring-petclinic-rest-vet
+  repository: a123453906/spring-petclinic-rest-vet
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  # tag: "latest"
-  tag: "v1"
+  tag: "latest"
+  #tag: "v1"
 
 imagePullSecrets: []
 nameOverride: ""

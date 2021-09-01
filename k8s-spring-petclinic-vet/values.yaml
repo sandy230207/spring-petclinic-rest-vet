@@ -83,7 +83,7 @@ affinity: {}
 
 env:
   - name: MYSQL_HOST
-    # value: mysql-petclinic-k8s-mysql-petclinic
-    value: 10.107.77.78
+    value: mysql-petclinic-k8s-mysql-petclinic
+    #value: 10.107.77.78
   - name: MYSQL_PASSWORD
     value: petclinic
